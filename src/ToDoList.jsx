@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; 
 
 function ToDoList() {
-    const [tasks, setTasks] = useState([]);
+
+    const [tasks, setTasks] = useState(() => {
+        const savedTasks = localStorage.getItem("tasks"); localStorage
+        return savedTasks ? JSON.parse(savedTasks) : []; 
+    });
+    
     const [newTasks, setNewTasks] = useState("");
-    const [searchQuery, setSearchQuery] = useState(""); 
+    const [searchQuery, setSearchQuery] = useState("");
     const [editingIndex, setEditingIndex] = useState(null);
     const [editedTask, setEditedTask] = useState("");
+
+
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks)); localStorage
+    }, [tasks]);
 
     function handleInputChange(event) {
         setNewTasks(event.target.value);

@@ -1,22 +1,25 @@
 body {
     background-color: pink;
+    margin: 0;
+    padding: 0;
 }
 
 .to-do-list {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
+    padding: 0 10px;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
 }
 
 button {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 10px 15px;
     color: white;
     border: none;
     border-radius: 5px;
@@ -27,7 +30,6 @@ button {
 .add-button {
     background-color: hsl(120, 100%, 54%);
 }
-
 .add-button:hover {
     background-color: hsl(120, 100%, 44%);
 }
@@ -35,7 +37,6 @@ button {
 .delete-button {
     background-color: hsl(10, 90%, 50%);
 }
-
 .delete-button:hover {
     background-color: hsl(10, 90%, 40%);
 }
@@ -43,7 +44,6 @@ button {
 .move-button {
     background-color: hsl(207, 90%, 64%);
 }
-
 .move-button:hover {
     background-color: hsl(207, 90%, 54%);
 }
@@ -51,7 +51,6 @@ button {
 .edit-button {
     background-color: hsl(45, 100%, 50%);
 }
-
 .edit-button:hover {
     background-color: hsl(45, 100%, 40%);
 }
@@ -59,17 +58,18 @@ button {
 .save-button {
     background-color: hsl(150, 100%, 40%);
 }
-
 .save-button:hover {
     background-color: hsl(150, 100%, 30%);
 }
 
 input[type="text"] {
-    font-size: 1.6rem;
-    padding: 10px;
+    font-size: 1.4rem;
+    padding: 8px;
     border: 2px solid hsl(0, 0%, 80%);
     border-radius: 5px;
     color: hsl(0, 0%, 0%);
+    width: 100%;
+    max-width: 500px;
 }
 
 ol {
@@ -77,7 +77,7 @@ ol {
 }
 
 li {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     padding: 15px;
     background-color: hsl(0, 0%, 97%);
@@ -86,16 +86,18 @@ li {
     border-radius: 5px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .text {
     flex: 1;
+    word-break: break-word;
 }
 
 .delete-button, .move-button, .edit-button, .save-button {
-    padding: 8px 12px;
-    font-size: 1.4rem;
-    margin-left: 10px;
+    padding: 6px 10px;
+    font-size: 1.2rem;
+    margin-left: 5px;
 }
 
 li input[type="text"] {
@@ -106,11 +108,11 @@ li input[type="text"] {
     flex: 1;
 }
 
-
 .search-bar {
-    width: 60%;
-    font-size: 1.6rem;
-    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    font-size: 1.4rem;
+    padding: 8px;
     border: 2px solid hsl(0, 0%, 80%);
     border-radius: 5px;
     margin-bottom: 20px;
@@ -120,4 +122,57 @@ li input[type="text"] {
 
 .search-bar:focus {
     border-color: hsl(207, 90%, 64%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .to-do-list {
+        margin-top: 30px;
+    }
+
+    button {
+        font-size: 1.3rem;
+        padding: 8px 12px;
+    }
+
+    li {
+        font-size: 1.6rem;
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .delete-button, .move-button, .edit-button, .save-button {
+        font-size: 1rem;
+        padding: 5px 8px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .to-do-list {
+        margin-top: 20px;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 6px 10px;
+    }
+
+    input[type="text"] {
+        font-size: 1.2rem;
+    }
+
+    li {
+        font-size: 1.4rem;
+        padding: 10px;
+    }
 }
